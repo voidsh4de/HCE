@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HCE - HyperCascadedEngine</title>
+</head>
+<body>
+    <h1 style="text-align: center;">HCE - HyperCascadedEngine</h1>
+    <script src="./main.js"></script>
+    <script>
+        const file = window.prompt("Game file (JS path):");
+
+        if (file) {
+            const script = document.createElement("script");
+            script.src = file;
+
+            // Run start() after the script loads
+            script.onload = function() {
+                if (typeof start === "function") {
+                    start();
+                } else {
+                    console.error("start() function not found in " + file);
+                }
+            };
+
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
