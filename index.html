@@ -2,10 +2,11 @@
 <head>
     <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <h1 style="border: rgb(56, 42, 104) solid 1px; display:inline; position: sticky; top: 0; background-color: rgb(170, 170, 170); border-bottom-right-radius: 1rem;">HyperCascadedEngine</h1>
-    <h2><a href="./windowTest.html" style="border: rgb(56, 42, 104) solid 1px; display:inline; position: fixed; top: 0; right:0; background-color: rgb(170, 170, 170); border-bottom-left-radius: 1rem; color: rgb(56, 42, 104);">DEMO</a></h2>
+    <h2 id="demo"><a href="./windowTest.html" style="border: rgb(56, 42, 104) solid 1px; display:inline; position: fixed; top: 0; right:0; background-color: rgb(170, 170, 170); border-bottom-left-radius: 1rem; color: rgb(56, 42, 104);">DEMO</a></h2>
     <ul>
         <li><a href="#window">Window</a></li>
         <li><a href="#button">Buttons</a></li>
@@ -91,4 +92,23 @@
         <p>heres a free demo game:</p>
         <div class="code">https://hce.voidsh4de.xyz/games/demo.js</div>
     </section>
+
+    <img src="./set.png" id="moreinfo" onclick="swap()">
+    <ul id="moreopt">
+        <li><a href="https://voidsh4de.xyz">developer</a></li>
+        <li><a href="https://github.com/voidsh4de/HCE">github</a></li>
+    </ul>
+
+    <script>
+        let display = "none";
+        function swap() {
+            if (display === "none") {
+                display = "block";
+            }
+            else if (display === "block") {
+                display = "none";
+            }
+            document.getElementById("moreopt").style.display = display;
+        }
+    </script>
 </body>

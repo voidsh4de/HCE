@@ -28,3 +28,42 @@ ul, section{
     background-color: rgb(56, 42, 104);
     margin: 1rem 0;
 }
+
+#moreinfo {
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 2rem;
+    background-color: rgb(170, 170, 170);
+    border: 1px rgb(56, 42, 104) solid;
+    border-radius: 10%;
+}
+
+#moreopt {
+    position: fixed;
+    bottom: 2rem;
+    right: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    background-color: rgb(170, 170, 170);
+    border: 1px rgb(56, 42, 104) solid;
+    border-radius: 10%;
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    body {
+        font-size: 25px;
+    }
+
+    #demo {
+        display: none;
+    }
+
+    #moreinfo {
+        width: 4rem;
+    }
+
+    #moreopt {
+        bottom: 4rem;
+    }
+}
