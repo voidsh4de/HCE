@@ -4,8 +4,20 @@
     <title>Window Test</title>
 </head>
 <body>
-    <h1 style="text-align: center;">HyperCascadedEngine 1.0.0</h1>
-    <script src="./engine/1.0.0.js"></script>
+    <h1 id="name"style="text-align: center;">HyperCascadedEngine </h1>
+
+    <script>
+        const ENGPROMPT = window.prompt("version model (1.0.0 recommended)");
+        document.getElementById("name").innerHTML += ENGPROMPT;
+        const engineV = `./engine/${ENGPROMPT}.js`;
+
+        if (engineV) {
+            const script = document.createElement("script");
+            script.src = engineV;
+            document.body.appendChild(script);
+        }
+    </script>
+
     <script>
         const file = window.prompt("Game file (JS path):");
 

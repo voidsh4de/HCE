@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h1 style="border: rgb(56, 42, 104) solid 1px; display:inline; position: sticky; top: 0; background-color: rgb(170, 170, 170); border-bottom-right-radius: 1rem;">HyperCascadedEngine</h1>
+    <h1 id="lrgTitle">HyperCascadedEngine</h1>
     <h2 id="demo"><a href="./windowTest.html" style="border: rgb(56, 42, 104) solid 1px; display:inline; position: fixed; top: 0; right:0; background-color: rgb(170, 170, 170); border-bottom-left-radius: 1rem; color: rgb(56, 42, 104);">DEMO</a></h2>
     <ul>
         <li><a href="#window">Window</a></li>
@@ -17,86 +17,131 @@
 
     <section id="window">
         <h2>Window</h2>
-        <p>We recommend the game is contained in a function called start(). <br>
-        defining the window size can easily be achived by using the following method: <br>
-        <div class="code">engine._widthPX = 1000;<br>engine._heightPX = 600;</div><br>
-        the values are in PIXELS and can be set to any positive value you wish.</p>
+        <p>We recommend the game is contained in a function called start().</p>
+        <div class="feat v100">
+            <p>defining the window size can easily be achived by using the following method: <br>
+            <div class="code">engine._widthPX = 1000;<br>engine._heightPX = 600;</div><br>
+            the values are in PIXELS and can be set to any positive value you wish.</p>
+        </div>
+        <div class="feat v101">
+            <p>defining the window size can easily be achived by using the following method: <br>
+            <div class="code">engine.setDimensions(width, height)</div><br>
+            the values are in PIXELS and can be set to any positive value you wish.</p>
+        </div>
 
         <div class="space"></div>
 
-        <p>after the width and height have been defined you can declare and establish the window and engine requirements via the following method</p>
-        <div class="code">engine.makeWindow()</div>
-        <p>You can also customize the color with the following method: (any css coloring method is supported)</p>
-        <div class="code">engine.window.changeColor(COLOURVALUE);</div>
+        <div class="feat v100 v101">
+            <p>after the width and height have been defined you can declare and establish the window and engine requirements via the following method</p>
+            <div class="code">engine.makeWindow()</div>
+            <p>You can also customize the color with the following method: (any css coloring method is supported)</p>
+            <div class="code">engine.window.changeColor(COLOURVALUE);</div>
+        </div>
+
+        <div class="feat v101">
+            <p>A image can be used as a background in place of a solid colour via the following function:</p>
+            <div class="code">engine.window.backgroundIMG(URL)</div>
+        </div>
     </section>
     <section id="button">
         <h2>Buttons</h2>
-        <p>there are two types of button input within the HyperCascadedEngine, UI and keyboard. <br>
-        To Create a UI button you can use the following function</p>
-        <div class="code">engine.buttons.makeNutton(ACTION, NAME);</div>
+        <div class="feat v101 v100">
+            <p>there are two types of button input within the HyperCascadedEngine, UI and keyboard. <br>
+            To Create a UI button you can use the following function</p>
+            <div class="code">engine.buttons.makeButton(ACTION, NAME);</div>
+        </div>
 
         <div class="space"></div>
         
-        <p>to use direct keyboard input you must first search the keyboard, then you can check the information collected by your search.</p>
-        <div class="code">engine.buttons.checkKeys(); //updates the keys object<br>if (engine.buttons.keys["w"]) x += 5; //"w" and [x += 5] are fillers for the example</div>
+        <div class="feat v100 v101">
+            <p>to use direct keyboard input you must first search the keyboard, then you can check the information collected by your search.</p>
+            <div class="code">engine.buttons.checkKeys(); //updates the keys object<br>if (engine.buttons.keys["w"]) x += 5; //"w" and [x += 5] are fillers for the example</div>
+        </div>
+
+        <div class="feat v101">
+            <p>you can delete/clear all UI type buttons with the following function:</p>
+            <div class="code">engine.buttons.clearButtons</div>
+        </div>
     </section>
+
     <section id="items">
         <h2>items</h2>
-        <p>items are the class of which anything displayed in your game is under, whether it be the player or a chair, it is an item. <br>
-        they are also the most complicated part of the engine. first lets cover how to make a item, a item can be made with the following function:</p>
-        <div class="code">makeItem(XPOSITION, YPOSITION, NAME, WIDTH, HEIGHT, COLOUR, RADIUS, BORDER);</div>
-        <p>XPOSITION and YPOSITION refer to pixels, the bottom left of your window is (0,0), you dont define that its pixels you just set the value to a num, that also applys to RADIUS. RADIUS and BORDER refer to the cascaded styling sheets style functions, RADIUS and BORDER are also optional inputs.</p>
-        <p><br>heres all the items sub varibles</p>
-        <div class="code">
-            item._x; //refers to XPOSITION<br>
-            item._y; //refers to YPOSITION<br>
-            item.name;<br>
-            item._width; //width of item<br>
-            item._height; //height of item<br>
-            item.color; //colour of item<br>
-            item.radius; //css style radius of item<br>
-            item.border; //css style border "black solid 1px"<br>
-            item.itemOffset; //the X offset that is applied to this item on print
+        <div class="feat v101 v100">
+            <p>items are the class of which anything displayed in your game is under, whether it be the player or a chair, it is an item. <br>
+            they are also the most complicated part of the engine. first lets cover how to make a item, a item can be made with the following function:</p>
+            <div class="code">engine.items.makeItem(XPOSITION, YPOSITION, NAME, WIDTH, HEIGHT, COLOUR, RADIUS, BORDER);</div>
+            <p>XPOSITION and YPOSITION refer to pixels, the bottom left of your window is (0,0), you dont define that its pixels you just set the value to a num, that also applys to RADIUS. RADIUS and BORDER refer to the cascaded styling sheets style functions, RADIUS and BORDER are also optional inputs.</p>
+            <p><br>heres all the items sub varibles</p>
+            <div class="code">
+                item._x; //refers to XPOSITION<br>
+                item._y; //refers to YPOSITION<br>
+                item.name;<br>
+                item._width; //width of item<br>
+                item._height; //height of item<br>
+                item.color; //colour of item<br>
+                item.radius; //css style radius of item<br>
+                item.border; //css style border "black solid 1px"<br>
+                item.itemOffset; //the X offset that is applied to this item on print
+            </div>
         </div>
         <div class="space"></div>
 
-        <p>to display your item(s) to the window you can use the following function</p>
-        <div class="code">engine.items.printItem(ITEM, IMAGE);</div>
-        <p>you must do this function for every item you wish to be displayed. IMAGE is not required and is used when you have art for a item instead of a solid colour.</p>
-        <p>To clear/refresh the window you can use the following function:</p>
-        <div class="code">engine.items.clearItems();</div>
+        <div class="feat v101 100">
+            <p>to display your item(s) to the window you can use the following function</p>
+            <div class="code">engine.items.printItem(ITEM, IMAGE);</div>
+            <p class="feat v100">the image URL must be wraped in "url(URL)".</p>
+            <p>you must do this function for every item you wish to be displayed. IMAGE is not required and is used when you have art for a item instead of a solid colour.</p>
+        </div>
+        <div class="feat v101 v100">
+            <p>To clear/refresh the window you can use the following function:</p>
+            <div class="code">engine.items.clearItems();</div>
+        </div>
 
         <div class="space"></div>
 
-        <p>if you intend to delete a item you MUST use the following function to stop positoning issues</p>
-        <div class="code">engine.items.removeOffset(ITEMWIDTH);</div>
-
+        <div class="feat v100 v101">
+            <p>if you intend to delete a item you MUST use the following function to stop positoning issues</p>
+            <div class="code">engine.items.removeOffset(ITEMWIDTH);</div>
+        </div>
+        
         <div class="space"></div>
 
-        <p>You can detect collision via the following function: (it returns a bool value)</p>
-        <div class="code">engine.items.isCollision(ITEM, ITEM); //fairly simple</div>
+        <div class="feat v100 v101">
+            <p>You can detect collision via the following function: (it returns a bool value)</p>
+            <div class="code">engine.items.isCollision(ITEM, ITEM); //fairly simple</div>
+        </div>
     </section>
     <section id="sound">
         <h2>Sound</h2>
-        <p>sound is very simple with HyperCascadedEngine, you can save a sound and use them using the following methods:</p>
-        <div class="code">const sound = engine.sound.make(FILE); //save this to a const <br>
-        sound.play();<br>
-        sound.pause();</div>
+        <div class="feat v101 v100">
+            <p>sound is very simple with HyperCascadedEngine, you can save a sound and use them using the following methods:</p>
+            <div class="code">const sound = engine.sound.make(FILE); //save this to a const <br>
+            sound.play();<br>
+            sound.pause();</div>
+        </div>
     </section>
     <section id="implementation">
         <h2>implementation</h2>
         <div class="code">
-            &lt;script src="hce.voidsh4de.xyz/engine/1.0.0.js"&gt;&lt;/script&gt;<br>
-            &lt;script src="YOURGAME"&gt;start()&lt;/script&gt;
+            &lt;script src="hce.voidsh4de.xyz/engine/VERSION.js"&gt;&lt;/script&gt; //replace VERSION with your version (ie. 1.0.0, 1.0.1)<br>
+            &lt;script src="YOURGAME"&gt;&lt;/script&gt;
+            &lt;script&gt;start()&lt;/script&gt;
         </div>
         <p>heres a free demo game:</p>
-        <div class="code">https://hce.voidsh4de.xyz/games/demo.js</div>
+        <div class="code">https://hce.voidsh4de.xyz/games/demo.js //made for version 1.0.0</div>
     </section>
 
     <img src="./set.png" id="moreinfo" onclick="swap()">
     <ul id="moreopt">
         <li><a href="https://voidsh4de.xyz">developer</a></li>
         <li><a href="https://github.com/voidsh4de/HCE">github</a></li>
+        <li>
+            <div style="display: flex;">
+            <button onclick="selectedVersion--; selectVersion()">back</button>
+            <div id="version"></div>
+            <button onclick="selectedVersion++; selectVersion()">next</button>
+            </div>
+        </li>
     </ul>
 
     <script>
@@ -111,4 +156,30 @@
             document.getElementById("moreopt").style.display = display;
         }
     </script>
+    <style>
+        .feat {
+            display: none;
+        }
+    </style>
+    <script>
+        let versions = ["ALL", "1.0.0", "1.0.1"];
+        let selectedVersion = 1;
+        let tempver = versions[1];
+        document.getElementById("version").innerHTML = tempver;
+        function selectVersion() {
+            tempver = versions[selectedVersion % versions.length];
+            document.getElementById("version").innerHTML = tempver;
+            if (tempver !== "ALL") {
+                document.querySelectorAll(".feat").forEach(el => el.style.display = "none");
+                const cls = "v" + tempver.replace(/\./g, "");
+                document.querySelectorAll("." + cls).forEach(el => {
+                    el.style.display = "block";
+                });
+            } else {
+                document.querySelectorAll(".feat").forEach(el => el.style.display = "block");
+            }
+            
+        }
+    </script>
+    <script>selectVersion()</script>
 </body>

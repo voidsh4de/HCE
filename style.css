@@ -8,10 +8,18 @@ body {
     background-color: rgb(170, 170, 170);
     color: rgb(56, 42, 104);
 }
+
+button {
+    background-color: rgb(170, 170, 170);
+    color: rgb(56, 42, 104);
+    border: rgb(56, 42, 104) inset 1px;
+    border-radius: 5%;
+}
 ul, section{
     margin-left: 5%;
     margin-bottom: 5%;
 }
+
 .code {
     background-color: rgb(66, 66, 66);
     display: inline-block;
@@ -49,10 +57,22 @@ ul, section{
     border-radius: 10%;
     display: none;
 }
+#lrgTitle {
+    border: rgb(56, 42, 104) solid 1px; 
+    display:inline; position: sticky; 
+    top: 0; 
+    background-color: rgb(170, 170, 170);
+    border-bottom-right-radius: 1rem;
+}
 
 @media screen and (max-width: 550px) {
     body {
         font-size: 25px;
+    }
+
+    #lrgTitle {
+        font-size: 1rem;
+        border-bottom-right-radius: 0;
     }
 
     #demo {
